@@ -14,6 +14,6 @@
 ----------
 # UiPath 교육 평가서 링크
 https://forms.gle/8BBj2xriYTbvJzGR6
-----------
+
 # AI 교육 평가서 링크
 https://forms.gle/ocvEX3KBNBDwAjq46
