@@ -7,7 +7,6 @@
 - https://github.com/UiPathRPA-KCC/Guide
 
 # 교육 강사 이메일
-- jdh@kcc.co.kr (정도혜 과장)
 - dykim@kcc.co.kr (김다영 과장)
 - hjchoi@kcc.co.kr (최효준 과장)
 
