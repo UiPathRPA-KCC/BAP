@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmn:definitions xmlns:dmn="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:di="http://www.omg.org/spec/DMN/20180521/DI/" id="definitions_1" name="definitions" exporter="UiPath (https://bpmn.uipath.com)" exporterVersion="461c4816">
+  <dmn:decision id="decision_1" label="PenaltyPolicy" name="PenaltyPolicy">
+    <dmn:informationRequirement id="edge_OgU3cF">
+      <dmn:requiredInput href="#InputData_245jR8" />
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="edge_nklYD6">
+      <dmn:requiredInput href="#InputData_kySOzU" />
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="edge_ovOAT7">
+      <dmn:requiredInput href="#InputData_fz8DX1" />
+    </dmn:informationRequirement>
+    <dmn:informationRequirement id="edge_llZoSk">
+      <dmn:requiredInput href="#InputData_ai9yLj" />
+    </dmn:informationRequirement>
+    <dmn:decisionTable id="decisionTable_1" hitPolicy="FIRST">
+      <dmn:input id="input1" label="isException">
+        <dmn:inputExpression id="inputExpression1" typeRef="boolean">
+          <dmn:text>isException</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="input_xdkcpvug" label="seasonType">
+        <dmn:inputExpression id="inputExpression_1_wn5lsj4q" typeRef="string">
+          <dmn:text>seasonType</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="input_8aq7n1qr" label="daysBefore">
+        <dmn:inputExpression id="inputExpression_2_1nilrujj" typeRef="number">
+          <dmn:text>daysBefore</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:input id="input_6c4pojkz" label="dayType">
+        <dmn:inputExpression id="inputExpression_3_okwn6r2g" typeRef="string">
+          <dmn:text>dayType</dmn:text>
+        </dmn:inputExpression>
+      </dmn:input>
+      <dmn:output id="output1" label="penaltyRate" name="위약금 공제 비율" typeRef="number" />
+      <dmn:rule id="rule_feajuv29">
+        <dmn:description></dmn:description>
+        <dmn:inputEntry id="output_ddstwz0b">
+          <dmn:text>true</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_q3p8pxot">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_ihhkzl2m">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_1hu0sdy3">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="output_s79sftqo">
+          <dmn:text>0</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="rule_g8bdaa2c">
+        <dmn:description></dmn:description>
+        <dmn:inputEntry id="output_fmbgf95t">
+          <dmn:text>false</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_s8rushmo">
+          <dmn:text>"성수기"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_muds5g1j">
+          <dmn:text>&gt;=5</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_4d9b8wdv">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="output_dzjg47ox">
+          <dmn:text>0</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="rule_tpxbwcg5">
+        <dmn:description></dmn:description>
+        <dmn:inputEntry id="output_rulraorb">
+          <dmn:text>false</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_06xuzyiz">
+          <dmn:text>"성수기"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_m49tfkp3">
+          <dmn:text>4</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_zwvmjir2">
+          <dmn:text>"주중"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="output_3u86jrc4">
+          <dmn:text>10</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="rule_a211pw12">
+        <dmn:description></dmn:description>
+        <dmn:inputEntry id="output_peur4rrr">
+          <dmn:text>false</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_xdrsuxam">
+          <dmn:text>"성수기"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_thsug1jb">
+          <dmn:text>4</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_xehgrhqj">
+          <dmn:text>"주말"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="output_drje2q75">
+          <dmn:text>20</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="rule_ufuk2eeu">
+        <dmn:description></dmn:description>
+        <dmn:inputEntry id="output_z9ejppqy">
+          <dmn:text>false</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_ohgbf7j6">
+          <dmn:text>"성수기"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_l2hqsdt1">
+          <dmn:text>3</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_k370v942">
+          <dmn:text>"주중"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="output_d9sujl7u">
+          <dmn:text>30</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="rule_2yjatvo1">
+        <dmn:description></dmn:description>
+        <dmn:inputEntry id="output_t8a71teb">
+          <dmn:text>false</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_todlhs2n">
+          <dmn:text>"성수기"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_nujqbho8">
+          <dmn:text>3</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_062rnzl2">
+          <dmn:text>"주말"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="output_ktjogq60">
+          <dmn:text>40</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="rule_u6dki2oz">
+        <dmn:description></dmn:description>
+        <dmn:inputEntry id="output_523g8kqz">
+          <dmn:text>false</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_bspil3vh">
+          <dmn:text>"성수기"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_cmrgco4x">
+          <dmn:text>2</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_c2xu01tw">
+          <dmn:text>"주중"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="output_9i9gwqzy">
+          <dmn:text>50</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="rule_5zxa3m32">
+        <dmn:description></dmn:description>
+        <dmn:inputEntry id="output_y49vbuwi">
+          <dmn:text>false</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_m2px0hsg">
+          <dmn:text>"성수기"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_k7bb6m7t">
+          <dmn:text>2</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_x4ob27i0">
+          <dmn:text>"주말"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="output_cugocswr">
+          <dmn:text>60</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="rule_hwjnwtc6">
+        <dmn:description></dmn:description>
+        <dmn:inputEntry id="output_z8yujzlj">
+          <dmn:text>false</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_o5ui6vkf">
+          <dmn:text>"성수기"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_cv9qmc93">
+          <dmn:text>1</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_rfyb2k3g">
+          <dmn:text>"주중"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="output_p8e0ql8b">
+          <dmn:text>80</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="rule_ljum11cj">
+        <dmn:description></dmn:description>
+        <dmn:inputEntry id="output_n4vqi1ow">
+          <dmn:text>false</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_tbf1ht0d">
+          <dmn:text>"성수기"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_t97bwf8h">
+          <dmn:text>1</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_3h2ztvln">
+          <dmn:text>"주말"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="output_z8o2tvu1">
+          <dmn:text>90</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="rule_x57vak63">
+        <dmn:description></dmn:description>
+        <dmn:inputEntry id="output_ot69z9ds">
+          <dmn:text>false</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_8s5avgjq">
+          <dmn:text>"성수기"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_jdcolj2p">
+          <dmn:text>0</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_ce2r1qgu">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="output_r5520c28">
+          <dmn:text>100</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="rule_sfzxwfuu">
+        <dmn:description></dmn:description>
+        <dmn:inputEntry id="output_svkih9oc">
+          <dmn:text>false</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_j3svvazy">
+          <dmn:text>"비수기"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_ivyicct2">
+          <dmn:text>&gt;=2</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_2ps27qxy">
+          <dmn:text>-</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="output_17o8dd81">
+          <dmn:text>0</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="rule_zqklw7p8">
+        <dmn:description></dmn:description>
+        <dmn:inputEntry id="output_6blow2wu">
+          <dmn:text>false</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_iy7by31l">
+          <dmn:text>"비수기"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_lvmmddc2">
+          <dmn:text>1</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_9i32aywd">
+          <dmn:text>"주중"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="output_kbj8q5bd">
+          <dmn:text>10</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="rule_zhtfnyel">
+        <dmn:description></dmn:description>
+        <dmn:inputEntry id="output_xod3b4p6">
+          <dmn:text>false</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_7k0kdyim">
+          <dmn:text>"비수기"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_5edi9fgy">
+          <dmn:text>1</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_xvm4ynru">
+          <dmn:text>"주말"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="output_6roo599w">
+          <dmn:text>20</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="rule_ml2v6io4">
+        <dmn:description></dmn:description>
+        <dmn:inputEntry id="output_3tqq2o4c">
+          <dmn:text>false</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_nysllodx">
+          <dmn:text>"비수기"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_nfqv3iti">
+          <dmn:text>0</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_3rrjfgxh">
+          <dmn:text>"주중"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="output_ti23aur4">
+          <dmn:text>20</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+      <dmn:rule id="rule_muhd5cx9">
+        <dmn:description></dmn:description>
+        <dmn:inputEntry id="output_m48ztbre">
+          <dmn:text>false</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_uvxi3q76">
+          <dmn:text>"비수기"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_rk0upxov">
+          <dmn:text>0</dmn:text>
+        </dmn:inputEntry>
+        <dmn:inputEntry id="output_cr6fd8p0">
+          <dmn:text>"주말"</dmn:text>
+        </dmn:inputEntry>
+        <dmn:outputEntry id="output_bcnsvx8t">
+          <dmn:text>30</dmn:text>
+        </dmn:outputEntry>
+      </dmn:rule>
+    </dmn:decisionTable>
+  </dmn:decision>
+  <dmn:inputData id="InputData_245jR8" label="예외상황 발생여부(기상재해 등)" name="isException" />
+  <dmn:inputData id="InputData_kySOzU" label="시즌 구분(성수기/비수기)" name="seasonType" />
+  <dmn:inputData id="InputData_fz8DX1" label="사용예정일 기준(N일 전)" name="daysBefore" />
+  <dmn:inputData id="InputData_ai9yLj" label="주중/주말 구분" name="dayType" />
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram id="DMNDiagram_1">
+      <dmndi:DMNShape id="DMNShape_decision_1" dmnElementRef="decision_1">
+        <dc:Bounds height="80" width="180" x="652" y="347" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_InputData_245jR8" dmnElementRef="InputData_245jR8">
+        <dc:Bounds height="45" width="125" x="369.5" y="567.4999961853027" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_InputData_kySOzU" dmnElementRef="InputData_kySOzU">
+        <dc:Bounds height="45" width="125" x="586.5" y="567.4999961853027" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_InputData_fz8DX1" dmnElementRef="InputData_fz8DX1">
+        <dc:Bounds height="45" width="125" x="778.5" y="567.4999961853027" />
+      </dmndi:DMNShape>
+      <dmndi:DMNShape id="DMNShape_InputData_ai9yLj" dmnElementRef="InputData_ai9yLj">
+        <dc:Bounds height="45" width="125" x="978.5" y="567.4999961853027" />
+      </dmndi:DMNShape>
+      <dmndi:DMNEdge id="DMNEdge_edge_OgU3cF" dmnElementRef="edge_OgU3cF">
+        <di:waypoint x="432" y="567.4999961853027" />
+        <di:waypoint x="432" y="497.24999809265137" />
+        <di:waypoint x="742" y="497.24999809265137" />
+        <di:waypoint x="742" y="427" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_edge_nklYD6" dmnElementRef="edge_nklYD6">
+        <di:waypoint x="649" y="567.4999961853027" />
+        <di:waypoint x="649" y="497.24999809265137" />
+        <di:waypoint x="742" y="497.24999809265137" />
+        <di:waypoint x="742" y="427" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_edge_ovOAT7" dmnElementRef="edge_ovOAT7">
+        <di:waypoint x="841" y="567.4999961853027" />
+        <di:waypoint x="841" y="497.24999809265137" />
+        <di:waypoint x="742" y="497.24999809265137" />
+        <di:waypoint x="742" y="427" />
+      </dmndi:DMNEdge>
+      <dmndi:DMNEdge id="DMNEdge_edge_llZoSk" dmnElementRef="edge_llZoSk">
+        <di:waypoint x="1041" y="567.4999961853027" />
+        <di:waypoint x="1041" y="497.24999809265137" />
+        <di:waypoint x="742" y="497.24999809265137" />
+        <di:waypoint x="742" y="427" />
+      </dmndi:DMNEdge>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</dmn:definitions>
