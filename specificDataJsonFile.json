@@ -1,1 +1,0 @@
-{"$schema":"http://json-schema.org/draft-07/schema#","type":"object","properties":{"Name":{"type":"string","description":""},"Age":{"type":"integer","description":"","minimum":0}},"required":["Name","Age"]}
